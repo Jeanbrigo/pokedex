@@ -13,9 +13,14 @@ body{
  }
 
 
+holder{
+    border: 50px solid white;
+    border-radius:20px;
+    background-color: white;
+    
+}
 
 img {
-
     max-height: 75px;
-    max-width: 100px;
+    max-width: 75px;
 }
