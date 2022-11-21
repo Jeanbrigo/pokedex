@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs") %>
+<body>
+    <h1>Edit <%=pokemons.name%></h1>
+    <form action="/pokedex/<%= index %>?_method=PUT" method="POST"> <!--forms can only take GET or POST-->
+        <input type="text" name="name" placeholder="Name"/><br/> <!-- make sure to add a name property as this is how the server will retrieve it -->
+        <input type="text" name="type1" placeholder="Pokédex Number"/><br/>
+        <input type="text" name="type1" placeholder="Type 1"/><br/>
+        <input type="text" name="type2" placeholder="Type 2"/><br/>
+        <input type="text" name="img" placeholder="Image URL Link"/><br/>
+        <input type="submit" value="Update Pokémon"/>
+    </form>
+    <a href='/pokedex/<%= index %>'><button>Return to <%=pokemons.name%></button></a>
+
+</body>
+</html>
