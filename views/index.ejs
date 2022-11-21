@@ -6,16 +6,20 @@
     <nav>
         <a href="/pokedex/new">Add a New Pokemon</a>
     </nav>
-    <ul>
-        <% for(let i = 0; i < pokemons.length; i++) { %>
+    <div class="container">
+        <% for(let i = 0; i < 24; i++) { %>
+        <div class="pokemon">
             <a href="/pokedex/<%=i%>"><img src="<%=pokemons[i].img %>"></a>
-            <li>
-               <%=pokemons[i].name %>
-               
-            </li>
-           
+            <form action="/pokedex/<%= i %>/edit" method ="GET">
+                <input type="submit" value="Edit"/>
+            </form>
+            <form action="/pokedex/<%= i %>?_method=DELETE" method ="POST">
+                <input type="submit" value="Delete"/>
+            </form>
+        </div>
         <% } %>
-    </ul>
+        
+    </div>
 
 
 </body>

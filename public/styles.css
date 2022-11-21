@@ -1,3 +1,21 @@
+body{
+    background-image: url('https://wallpapercave.com/wp/wp3170170.jpg');
+    color: white;
+}
+
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    align-items: stretch;
+ }
+
+
+
 img {
-    max-width: 200px;
+
+    max-height: 75px;
+    max-width: 100px;
 }

@@ -24,22 +24,32 @@ app.get('/pokedex/new', (req,res)=>{
     res.render('new.ejs')
 })
 
+// Destroy Route
+app.delete("/pokedex/:id", (req,res)=>{
+    // splice the item out of the array
+    pokemon.splice(req.params.id, 1);
+    // redirect user back to index
+    res.redirect("/pokedex");
+});
+
 // Update Route
 app.put("/pokedex/:id", (req,res)=>{
-    if(req.body.type2 !== null){
+    if(req.body.type2 !== ""){
         req.body.type = [req.body.type1, req.body.type2]
     }
-    else{req.body.type=[req.body.type1]}
+    else{req.body.type=[req.body.type1]};
+    console.log(req.body)
     pokemon[req.params.id] = req.body;
     res.redirect('/pokedex');
 })
 
 // Create Route
 app.post('/pokedex', (req,res)=>{
-    if(req.body.type2 !== null){
+    if(req.body.type2 !== ""){
         req.body.type = [req.body.type1, req.body.type2]
     }
-    else{req.body.type=[req.body.type1]}
+    else{req.body.type=[req.body.type1]};
+    console.log(req.body);
     pokemon.push(req.body);
     res.redirect('/pokedex')
 })
