@@ -2,11 +2,12 @@
 <html lang="en">
     <%- include("./partials/head.ejs") %>
 <body>
+    <h1>Pokédex</h1>
     <button>
         <a href="/pokedex/new">Add a New Pokemon</a>
     </button>
     <div class="container">
-        <% for(let i = 0; i < 25; i++) { %>
+        <% for(let i = 0; i < pokemons.length; i++) { %>
         <div class="pokemon">
            <a href="/pokedex/<%=i%>"><img src="<%=pokemons[i].img %>"></a>
            <div class=forms>
